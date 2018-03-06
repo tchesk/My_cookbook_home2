@@ -16,7 +16,7 @@ class RecipesController < ApplicationController
 
     @recipes = Recipe.new(recipe_params)
 
-    @recipes.save!
+    @recipes.save
 
     redirect_to recipe_path(@recipes.id)
 
