@@ -1,7 +1,6 @@
 class CuisinesController < ApplicationController
   def show
-  @cuisines = Cuisine.find(params[:id])
-
+    @cuisine = Cuisine.find(params[:id])
   end
 
 
