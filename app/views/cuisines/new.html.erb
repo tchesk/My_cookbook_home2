@@ -1,0 +1,5 @@
+<%= form_for (@cuisine) do |cuisine|%>
+  <%= cuisine.label :name, "Nome" %>
+  <%= cuisine.text_field :name %>
+  <%= cuisine.submit 'Enviar'%>
+<% end %>
