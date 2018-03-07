@@ -1,6 +1,7 @@
+<h1><%= @cuisine.name %></h1>
 <% if @cuisine.recipes.empty? %>
-
-  <h1><%= @cuisine.name %></h1>
+  <%= 'Nenhuma receita encontrada para este tipo de cozinha' %>
+<% else %>
   <% @cuisine.recipes.each do |recipe| %>
     <h1><%= recipe.title %></h1>
     <ul>
@@ -10,5 +11,4 @@
       <li><%= recipe.cook_time %> minutos </li>
     </ul>
   <% end %>
-<% 'Nenhuma receita encontrada para este tipo de cozinha' %>
 <% end %>
