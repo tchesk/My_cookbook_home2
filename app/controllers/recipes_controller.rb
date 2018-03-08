@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
   end
 
   def new
-    @recipes = Recipe.new()
+    @recipes = Recipe.new(:name)
     @cuisine = Cuisine.all
   end
 
