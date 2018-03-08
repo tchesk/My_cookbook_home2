@@ -4,22 +4,17 @@ class CuisinesController < ApplicationController
     @recipes = Recipe.new()
   end
   def new
-
-    @cuisine = Cuisine.new
-
-    if @cuisine.save
-    else
-      @cuisine.errors.full_messages
-    end
-
-
+    @cuisine = Cuisine.new()
   end
   def create
     cuisine_params = params.require(:cuisine).permit(:name)
-    @cuisines = Cuisine.new(cuisine_params)
+    @cuisine = Cuisine.new(cuisine_params)
 
-    @cuisines.save
-    redirect_to cuisine_path(@cuisines.id)
-
+    if @cuisine.save
+      redirect_to cuisine_path(@cuisine.id)
+    else
+      flash[:error] = @cuisine.errors.full_messages
+      render :new
+    end
   end
 end

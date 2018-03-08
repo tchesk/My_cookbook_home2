@@ -1,3 +1,4 @@
+<%= flash[:error] %>
 <%= @cuisine.errors.details[:name]%>
 <%= form_for (@cuisine) do |cuisine|%>
   <%= cuisine.label :name, "Nome" %>
