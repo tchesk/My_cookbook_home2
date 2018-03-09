@@ -1,10 +1,11 @@
 class CuisinesController < ApplicationController
   def show
     @cuisine = Cuisine.find(params[:id])
-    @recipes = Recipe.new()
+    @recipes = Recipe.new
+    
   end
   def new
-    @cuisine = Cuisine.new()
+    @cuisine = Cuisine.new
   end
   def create
     cuisine_params = params.require(:cuisine).permit(:name)
