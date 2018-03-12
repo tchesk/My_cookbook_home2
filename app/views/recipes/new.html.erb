@@ -6,8 +6,8 @@
   <%=recipe.text_field :title  %>
   </div>
   <div>
-  <%= recipe.label :recipe_type, 'Tipo da Receita'  %>
-  <%= recipe.text_field :recipe_type %>
+  <%= recipe.label :recipe_type_id, 'Tipo da Receita'  %>
+  <%= recipe.collection_select(:recipe_type_id, @recipe_type, :id, :name) %>
   </div>
   <div>
   <%= recipe.label :cuisine_id, 'Cozinha' %>
