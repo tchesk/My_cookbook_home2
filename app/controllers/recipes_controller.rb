@@ -4,7 +4,6 @@ class RecipesController < ApplicationController
   end
 
   def new
-    @recipes = Recipe.new
     @cuisine = Cuisine.all
     @recipe_type = RecipeType.all
     @recipe = Recipe.new
@@ -13,14 +12,15 @@ class RecipesController < ApplicationController
   def create
     recipe_params = params.require(:recipe).permit(:title, :recipe_type_id, :cuisine_id,
       :difficulty, :cook_time, :ingredients, :method)
+    @recipe = Recipe.new(recipe_params)
 
-    @recipes = Recipe.new(recipe_params)
-
-    @recipes.save
-
-    redirect_to recipe_path(@recipes.id)
-
+    if @recipe.save
+      redirect_to recipe_path(@recipe.id)
+    else
+      flash[:error] = @recipe.errors.full_messages
+      @cuisine = Cuisine.all
+      @recipe_type = RecipeType.all
+      render :new
+    end
   end
-
-
 end
