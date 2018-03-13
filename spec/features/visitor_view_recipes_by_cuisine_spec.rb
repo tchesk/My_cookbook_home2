@@ -1,4 +1,4 @@
-  require 'rails_helper'
+require 'rails_helper'
 
 feature 'Visitor view recipes by cuisine' do
 
@@ -6,13 +6,12 @@ feature 'Visitor view recipes by cuisine' do
     # cria os dados necessários previamente
     cuisine = Cuisine.create(name: 'Brasileira')
     recipe_type = RecipeType.create(name: 'Sobremesa')
-    recipe = Recipe.create(title: 'Bolo de cenoura',
-      recipe_type: recipe_type,
-      cuisine: cuisine,
-      difficulty: 'Médio',
-      cook_time: 60,
-      ingredients: 'Farinha, açucar, cenoura',
-      method: 'Cozinhe a cenoura, corte em pedaços pequenos, misture com o restante dos ingredientes')
+
+    recipe = Recipe.create(title: 'Bolo de cenoura', recipe_type: recipe_type,
+                          cuisine: cuisine, difficulty: 'Médio',
+                          cook_time: 60,
+                          ingredients: 'Farinha, açucar, cenoura',
+                          method: 'Cozinhe a cenoura, corte em pedaços pequenos, misture com o restante dos ingredientes')
 
     # simula a ação do usuário
     visit root_path
