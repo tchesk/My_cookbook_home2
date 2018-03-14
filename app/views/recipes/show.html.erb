@@ -1,12 +1,14 @@
-<h1><%= @recipe.title %></h1>
-<h3> Detalhes </h3>
-<p><%= @recipe.recipe_type.name %> </p>
-<p><%= @recipe.cuisine.name %> </p>
-<p><%= @recipe.difficulty  %> </p>
-<p><%= @recipe.cook_time %> minutos </p>
-<h3> Ingredientes </h3>
-<p><%= @recipe.ingredients %></p>
-<h3> Como Preparar </h3>
-<p><%= @recipe.method  %></p>
-
+<h1><%= if @recipe.title.empty? %></h1>
+     <%= 'Nenhuma receita encontrada para este tipo de receitas' %>
+<% else %>
+    <h3> Detalhes </h3>
+    <p><%= @recipe.recipe_type.name %> </p>
+    <p><%= @recipe.cuisine.name %> </p>
+    <p><%= @recipe.difficulty  %> </p>
+    <p><%= @recipe.cook_time %> minutos </p>
+    <h3> Ingredientes </h3>
+    <p><%= @recipe.ingredients %></p>
+    <h3> Como Preparar </h3>
+    <p><%= @recipe.method  %></p>
+<% end %>
 <%=link_to 'Voltar', root_path %>

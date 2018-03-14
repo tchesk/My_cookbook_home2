@@ -1,13 +1,11 @@
 <h1><%= @recipe_type.name %></h1>
-<% if @recipe.empty? %>
-  <%= @recipe_type.recipes.each do |recipe| %>
-    <h1><%= recipe.title %></h1>
-    <ul>
-      <li><%= recipe.recipe_type.name %></li>
-      <li><%= recipe.cuisine.name %></li>
-      <li><%= recipe.difficulty %></li>
-      <li><%= recipe.cook_time %> minutos </li>
-    </ul>
-  <% end %>
-  <%= flash[:errors] %>
+
+<%= @recipe_type.recipes.each do |recipe| %>
+  <h1><%= recipe.title %></h1>
+  <ul>
+    <li><%= recipe.recipe_type.name %></li>
+    <li><%= recipe.cuisine.name %></li>
+    <li><%= recipe.difficulty %></li>
+    <li><%= recipe.cook_time %> minutos </li>
+  </ul>
 <% end %>
