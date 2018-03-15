@@ -13,8 +13,8 @@
   </ul>
 <% end %>
 
-<% @recipe_types.recipes.each do |recipe_type| %>
-  <%= link_to recipe_type.name, recipe_path(@recipe_type.id) %>
+<% @recipe_types.each do |recipe_type| %>
+  <%= link_to recipe_type.name, recipe_type_path(recipe_type.id) %>
   <% end %>
 
 <% @cuisines.each do |cuisine| %>
