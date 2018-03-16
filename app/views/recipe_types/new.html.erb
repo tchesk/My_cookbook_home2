@@ -1,0 +1,6 @@
+<%= flash[:errors] %>
+<%= form_for (@recipe_type) do |recipe_type| %>
+  <%= recipe_type.label :name, 'Nome' %>
+  <%= recipe_type.text_field :name %>
+  <%= recipe_type.submit 'Enviar' %>
+<% end %>
