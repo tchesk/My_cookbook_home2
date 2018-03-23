@@ -209,7 +209,10 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.2)
   devise
+<<<<<<< HEAD
   factory_bot_rails
+=======
+>>>>>>> 5b4a12c767593d5a4e8df2e371b5a99707665c6a
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   puma (~> 3.7)
