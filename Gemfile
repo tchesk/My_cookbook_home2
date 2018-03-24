@@ -15,8 +15,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
-<<<<<<< HEAD
-<<<<<<< HEAD
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -24,24 +22,13 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-=======
->>>>>>> 5b4a12c767593d5a4e8df2e371b5a99707665c6a
-=======
->>>>>>> ce02dc146795013b26829114efef535d16f3b9c0
+
 gem 'devise'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
   gem 'capybara'
-<<<<<<< HEAD
-<<<<<<< HEAD
-  gem 'factory_bot_rails'
-=======
-
->>>>>>> 5b4a12c767593d5a4e8df2e371b5a99707665c6a
-=======
->>>>>>> ce02dc146795013b26829114efef535d16f3b9c0
 end
 
 group :development do
