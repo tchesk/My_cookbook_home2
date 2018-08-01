@@ -1,16 +1,17 @@
 require 'rails_helper'
 
 feature 'user login and show welcome message' do
-  scenario '' do
+  scenario 'successfully' do
     user = User.create(email: 'joao@email.com', password:'123456')
 
     visit root_path
-    click_on 'login'
+    click_on 'Registrar'
 
-    fill_in 'email', with: 'joao@email.com'
-    fill_in 'password', with: '123456'
-    click_on 'Logar'
+    fill_in 'Email', with: 'joao@email.com'
+    fill_in 'Password', with: '123456'
+    click_on 'Log in'
+
     expect(current_path).to eq(root_path)
-    expect(page).to have_css('p', text: "Seja bem-vindo #{email}")
+    expect(page).to have_css('p', text: "Seja bem-vindo #{user.email}")
   end
 end
